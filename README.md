@@ -1,5 +1,9 @@
 ## Ubuntu 16.04LTS Config
 
+[TOC]
+
+
+
 #### Delete Amazon link
 
 ```bash
@@ -291,3 +295,35 @@ sudo mv wps_symbol_fonts /usr/share/fonts/
 ```
 
 reboot
+
+
+
+#### Anaconda
+
+Download .sh file from https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/
+
+```bash
+bash Anaconda3-5.3.1-Linux-x86_64.sh
+```
+
+Add environment variable
+
+```bash
+sudo gedit ~/.bashrc
+```
+
+add follows line
+
+> export PATH="/home/fortistray/anaconda3/bin:$PATH"
+
+Change image source to tuna
+
+```bash
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --set show_channel_urls yes
+
+# Check
+cat ~/.condarc
+```
+
